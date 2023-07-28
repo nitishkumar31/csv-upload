@@ -1,0 +1,61 @@
+<!-- local css for body -->
+<link rel="stylesheet" type="text/css" href="../css/file_viewer.css">
+<!-- local css for header -->
+<link rel="stylesheet" type="text/css" href="../css/header.css">
+
+
+<!-- header -->
+<div class="nav-bar" style="position: fixed;">
+    <a href="/" class="back-icon">
+        <i class="fa-solid fa-circle-arrow-left" style="color: #b8b8b8;"></i>
+    </a>
+    <div class="title">
+        CSV Upload
+    </div>
+    <div class="sub-title">
+        Viewer
+    </div>
+    <div class="file-name">
+        <%= fileName %>
+    </div>
+</div>
+
+<!-- search bar -->
+<div class="search-bar">
+    <form id="searchForm">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search data...">
+            <button id="go" class="search-btn" type="button">Go</button>
+        </div>
+    </form>
+    <div>
+        <p id="total-rows">Total Rows: <%=length%>
+        </p>
+    </div>
+</div>
+
+<!-- search results -->
+<div>
+    <table>
+        <thead>
+            <tr>
+                <% for(let h of head) { %>
+                    <th>
+                        <%= h %>
+                    </th>
+                    <% } %>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(let row of data) { %>
+                <tr>
+                    <% for(let key of Object.keys(row)) { %>
+                        <td>
+                            <%= row[key] %>
+                        </td>
+                        <% } %>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>

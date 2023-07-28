@@ -1,0 +1,74 @@
+<!-- local css for body -->
+<link rel="stylesheet" type="text/css" href="../css/home.css">
+<!-- local css for header -->
+<link rel="stylesheet" type="text/css" href="../css/header.css">
+
+
+<!-- header -->
+<div class="nav-bar">
+    <a href="" class="back-icon" style="visibility: hidden;">
+        <i class="fa-solid fa-circle-arrow-left" style="color: #b8b8b8;"></i>
+    </a>
+    <div class="title">
+        CSV Upload
+    </div>
+</div>
+
+<!-- upload -->
+<div class="container">
+    <!-- main text -->
+    <div class="center-text">
+        <h1>Upload a File Here</h1>
+        <p>Reads CSV file and displays its content in tabular form</p>
+    </div>
+
+    <!-- upload box -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="input-container">
+            <input type="file" id="csvFile" name="file" accept=".csv">
+            <button class="upload-btn">Upload</button>
+        </div>
+    </form>
+</div>
+
+<!-- show uploaded files -->
+<div class="files-list" style="margin-bottom: 50px;">
+    <div class="list-center-text">
+        <h2>Uploaded files</h2>
+    </div>
+
+    <% if(files.length==0) { %>
+        <div class="no-file">No files to show!</div>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time (UTC)</th>
+                        <th>View</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let file of files) { %>
+                        <tr>
+                            <td>
+                                <%= file.fileName %>
+                            </td>
+                            <td>
+                                <%= file.createdAt.toLocaleDateString() %>
+                            </td>
+                            <td>
+                                <%= file.createdAt.toLocaleTimeString() %>
+                            </td>
+                            <td><a href="/view/<%= file.file %>" class="view-link"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                            <td><a href="/delete/<%= file.file %>" class="delete-link"><i
+                                        class="fa-regular fa-trash-can " style="color: #f00;"></i></a></td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+            <% } %>
+</div>
