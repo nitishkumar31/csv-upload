@@ -1,0 +1,96 @@
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+/* .container {
+  margin-top: 70px;
+} */
+.center-text h1 {
+  font-size: 44px;
+  font-family: Franklin Gothic Medium;
+  text-align: center;
+  height: 35px;
+}
+.center-text p {
+  font-size: 22px;
+  font-family: Franklin Gothic;
+  text-align: center;
+  color: gray;
+}
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 70%;
+  height: 150px;
+  background-color: #f8f8f8;
+  border: 2px dashed lightgrey;
+}
+.upload-btn {
+  width: 130px;
+  height: 40px;
+  border: none;
+  background-color: #4b88fd;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 7px;
+}
+
+.list-center-text {
+  color: #f8f8f8;
+  font-family: Franklin Gothic;
+  text-align: center;
+  background-color: steelblue;
+  margin-top: 50px;
+}
+.list-center-text h2 {
+  padding: 5px;
+  font-size: 30px;
+}
+.no-file {
+  font-size: 22px;
+  color: steelblue;
+  font-family: Franklin Gothic;
+  text-align: center;
+}
+.file-details {
+  display: flex;
+  justify-content: space-evenly;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  /* margin: 20px 0; */
+  margin: auto;
+}
+th,
+td {
+  text-align: left;
+  padding: 12px;
+}
+th {
+  background-color: #eee;
+  font-weight: bold;
+}
+td {
+  border-bottom: 1px solid #ddd;
+}
+.view-link {
+  padding: 10px;
+  text-decoration: none;
+  color: #0000f1;
+}
+.delete-link {
+  padding: 10px;
+  font-size: 18px;
+}
+
+/*  styles on hover */
+.upload-btn:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0px 2px 2px 1px rgba(75, 136, 253, 0.4);
+  cursor: pointer;
+}
